@@ -1,1 +1,2 @@
 Justify a new commit: 0
+Justify commit for none method
