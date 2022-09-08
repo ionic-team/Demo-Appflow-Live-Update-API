@@ -4,30 +4,21 @@
       Custom Live Update Demo 🚀
     </ion-title>
   </ion-toolbar>
-</ion-header>
-<ion-content [fullscreen]="true">
+ </ion-header>
+ <ion-content [fullscreen]="true">
     <ion-accordion-group>
+      <ion-accordion value="manual-update">
+          <ion-item slot="header">
+              <ion-label>Reload App with Manual Update</ion-label>
+            </ion-item>
+            <ion-item slot="content">
+            </ion-item>
+      </ion-accordion>
       <ion-accordion value="get-configuration">
         <ion-item slot="header">
           <ion-label>Get Configurations</ion-label>
         </ion-item>
         <ion-item slot="content">
-          <ion-grid id='grid-get-configuration'>
-              <ion-row>
-                  <ion-col>
-                      <p><a href='https://ionic.io/docs/appflow/deploy/api#getconfiguration'>Deploy.getConfiguration()</a> can be used to get the app's configurations for handling live updates. The information obtained from this method includes, the app id, channel name, and update method associated with the app.</p>
-                      <p>In this example, we demonstrate how this method can be used to obtain the app id.</p>
-                  </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col>
-                  <ion-button (click)='getUpdateConfig()'>getConfiguration()</ion-button>
-                </ion-col>
-                <ion-col>
-                  <ion-text color='secondary'>App id: {{appid}}</ion-text>
-                </ion-col>
-              </ion-row>
-          </ion-grid>
         </ion-item>
       </ion-accordion>
       <ion-accordion value="get-current-version">
@@ -44,13 +35,6 @@
             <ion-item slot="content">
             </ion-item>
         </ion-accordion>
-        <ion-accordion value="manual-update">
-          <ion-item slot="header">
-              <ion-label>Reload App with Manual Update</ion-label>
-            </ion-item>
-            <ion-item slot="content">
-            </ion-item>
-        </ion-accordion>
         <ion-accordion value="configure">
           <ion-item slot="header">
               <ion-label>Configure App to Receive Live Updates</ion-label>
@@ -59,4 +43,4 @@
             </ion-item>
         </ion-accordion>
     </ion-accordion-group>
-</ion-content>
+ </ion-content>
