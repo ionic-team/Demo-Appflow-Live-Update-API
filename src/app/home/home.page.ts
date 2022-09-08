@@ -9,6 +9,7 @@ import { Deploy } from 'cordova-plugin-ionic/dist/ngx';
 export class HomePage {
   updateStatus: string = 'Update not started';
   appid: string = 'TBD';
+  versionCurrent: string = 'TBD';
 
   constructor(private _deploy: Deploy) {}
   
@@ -38,5 +39,13 @@ export class HomePage {
     this.appid = info;
   }
  
+  async getCurrVersion() {
+    let versionCurrent = (await this._deploy.getCurrentVersion());
+    if (versionCurrent) {
+      this.versionCurrent = versionCurrent.versionId;
+    } else {
+      this.versionCurrent = 'No version found';
+    }
+  }
  
 }

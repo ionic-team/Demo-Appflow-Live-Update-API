@@ -58,7 +58,22 @@
             <ion-label>Get Current Live Update Version</ion-label>
           </ion-item>
           <ion-item slot="content">
-          </ion-item>
+            <ion-grid id='grid-get-current-version'>
+                <ion-row>
+                    <ion-col>
+                      <p><a href='https://ionic.io/docs/appflow/deploy/api#getcurrentversion'>Deploy.getCurrentVersion()</a> can be used to get the id of the live update currently applied to the app</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-button (click)='getCurrVersion()'>getCurrentVersion()</ion-button>
+                  </ion-col>
+                  <ion-col>
+                    <ion-text color='secondary'>Version: {{versionCurrent}}</ion-text>
+                  </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
       </ion-accordion>
       <ion-accordion value="get-available-version">
           <ion-item slot="header">
