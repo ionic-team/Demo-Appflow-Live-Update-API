@@ -80,7 +80,22 @@
               <ion-label>Get Count of Available Live Update Versions</ion-label>
             </ion-item>
             <ion-item slot="content">
-            </ion-item>
+              <ion-grid id='grid-get-current-version'>
+                  <ion-row>
+                      <ion-col>
+                        <p><a href='https://ionic.io/docs/appflow/deploy/api#getavailableversions'>Deploy.getAvailableVersions()</a> can be used to get the number of live updates available for the current natvie version of this app</p>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>
+                      <ion-button (click)='onCheckVersions()'>getAvailableVersions()</ion-button>
+                    </ion-col>
+                    <ion-col>
+                      <ion-text color='secondary'>Number of Versions: {{versionsAvailable}}</ion-text>
+                    </ion-col>
+                  </ion-row>
+              </ion-grid>
+          </ion-item>
         </ion-accordion>
         <ion-accordion value="configure">
           <ion-item slot="header">

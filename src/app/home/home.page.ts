@@ -10,7 +10,7 @@ export class HomePage {
   updateStatus: string = 'Update not started';
   appid: string = 'TBD';
   versionCurrent: string = 'TBD';
-
+  versionsAvailable: string = 'Unknown';
   constructor(private _deploy: Deploy) {}
   
   async performManualUpdate() {
@@ -48,4 +48,13 @@ export class HomePage {
     }
   }
  
+  async onCheckVersions() {
+    const versions = await this._deploy.getAvailableVersions();
+    if (versions.length > 0) {
+      this.versionsAvailable = versions.length.toString();
+    } else {
+      this.versionsAvailable = "None"
+    }
+  }
+  
 }
