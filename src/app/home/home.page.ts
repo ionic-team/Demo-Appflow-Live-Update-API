@@ -8,6 +8,7 @@ import { Deploy } from 'cordova-plugin-ionic/dist/ngx';
 })
 export class HomePage {
   updateStatus: string = 'Update not started';
+  appid: string = 'TBD';
 
   constructor(private _deploy: Deploy) {}
   
@@ -31,5 +32,11 @@ export class HomePage {
       this.updateStatus = 'No update available';
     }
    }
+
+  async getUpdateConfig() {
+    const info = (await this._deploy.getConfiguration()).appId;
+    this.appid = info;
+  }
+ 
  
 }
