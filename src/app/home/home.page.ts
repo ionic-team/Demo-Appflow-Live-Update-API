@@ -11,6 +11,8 @@ export class HomePage {
   appid: string = 'TBD';
   versionCurrent: string = 'TBD';
   versionsAvailable: string = 'Unknown';
+  newChannel: string = 'Production';
+  channelCurrent: string = 'Production';
   constructor(private _deploy: Deploy) {}
   
   async performManualUpdate() {
@@ -57,4 +59,13 @@ export class HomePage {
     }
   }
   
+  async configureDeploy() {
+    let appid = (await this._deploy.getConfiguration()).appId;
+    const config = {
+      'appId': appid,
+      'channel': this.newChannel
+    }
+    await this._deploy.configure(config);
+    this.channelCurrent = this.newChannel;
+  }
 }
