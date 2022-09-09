@@ -66,6 +66,6 @@ export class HomePage {
       'channel': this.newChannel
     }
     await this._deploy.configure(config);
-    this.channelCurrent = this.newChannel;
+    this.channelCurrent = (await this._deploy.getConfiguration()).channel;
   }
 }
