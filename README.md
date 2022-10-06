@@ -20,9 +20,9 @@ These steps will need to be followed to prepare the app such that it will be con
 3) Open a terminal in the project directory and run `npm i` to get the latest compatible [@capacitor/android](https://www.npmjs.com/package/@capacitor/android) and [cordova-plugin-ionic](https://www.npmjs.com/package/cordova-plugin-ionic) plugins in the `package-lock.json` file.
 4) Create a new app in the Appflow dashboard and assign the forked repo to this Appflow app. 
 5) Find the app id for the Appflow app and add it as an `id` key in the project's `ionic.config.json` file.
-5) Run `ionic deploy configure` and select the app id, live update channel, and `none` for the live update method
-6) Run `npx cap sync android` to ensure the project's android directory is updated
-7) Commit and push changes to the forked repo
-8) Run a new android debug build on this commit to obtain the android build artifacts
+6) Run `ionic deploy configure` and select the app id, live update channel, and `none` for the live update method
+7) Run `npx cap sync android` to ensure the project's android directory is updated
+8) Commit and push changes to the forked repo
+9) Run a new android debug build on this commit to obtain the android build artifacts
 
 With the android build artifacts created, the app can be launched from an emulator or test device.
